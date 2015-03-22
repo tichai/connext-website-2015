@@ -22,7 +22,6 @@
 		padding: 0;
 		margin: 0;
 		background: #000;
-		
 	}
 	#bg {
 		position: fixed;
@@ -30,9 +29,17 @@
 		left: 0;
 		width: 100%;
 		height: 120vh;
-		-webkit-perspective: 500px;
+		z-index: 1;
+		-webkit-perspective: 40000vh;
+		-moz-perspective: 40000vh;
+		-ms-perspective: 40000vh;
+		-o-perspective: 40000vh;
+		perspective: 40000vh;
 		-webkit-perspective-origin: center bottom;
-		z-index: -200;
+		-moz-perspective-origin: center bottom;
+		-ms-perspective-origin: center bottom;
+		-o-perspective-origin: center bottom;
+		perspective-origin: center bottom;
 	}
 	#bg .lazer {
 		background: #00B7FF;
@@ -41,29 +48,43 @@
 		transition: all 30ms ease;
 
 		position: fixed;
-		top: -60vh;
+		top: -196vh;
 		left: 50vw;
 		width: 30px;
-		height: 500vh;
-		margin-top: -100vh;
+		height: 520vh;
+		margin-top: 0vh;
 		margin-left: -15px;
-		z-index: -12;
+		z-index: 3;
 		-webkit-filter: blur(19px);
+		-moz-filter: blur(19px);
+		-ms-filter: blur(19px);
+		-o-filter: blur(19px);
+		filter: blur(19px);
+		transform-style: flat;
 	}
 	#bg #bg-up {
-		-webkit-transform: skewX(-18deg) translateX(-94px) rotateX(14deg);
+		-webkit-transform: skewX(-33deg) translateX(-90px) rotateX(72deg);
+		-moz-transform: skewX(-33deg) translateX(-90px) rotateX(72deg);
+		-ms-transform: skewX(-33deg) translateX(-90px) rotateX(72deg);
+		-o-transform: skewX(-33deg) translateX(-90px) rotateX(72deg);
+		transform: skewX(-33deg) translateX(-90px) rotateX(72deg);
 	}
 	#bg #bg-down {
-		-webkit-transform: skewX(18deg) translateX(94px) rotateX(14deg);
+		-webkit-transform: skewX(33deg) translateX(90px) rotateX(72deg);
+		-moz-transform: skewX(33deg) translateX(90px) rotateX(72deg);
+		-ms-transform: skewX(33deg) translateX(90px) rotateX(72deg);
+		-o-transform: skewX(33deg) translateX(90px) rotateX(72deg);
+		transform: skewX(33deg) translateX(90px) rotateX(72deg);
 	}
 	.shadow {
 		position: fixed;
-		background: linear-gradient(rgba(0, 0, 0, 1) 4%, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0) 88%);
+		background: linear-gradient(rgba(0, 0, 0, 0.92) 9%, rgba(0, 0, 0, 0) 85%);
 		top: 0;
 		left: 0;
 		width: 100%;
-		height: 120vh;
-		z-index: -2;
+		height: 140vh;
+		z-index: 33;
+		transform-style: flat;
 	}
 	header a:link, header a:visited, header a:hover, header a:active, footer a {
 		display: block;
@@ -73,12 +94,13 @@
 	header {
 		opacity: 0;
 		position: relative;
-		top: -24px;
+		top: -18px;
 		height: 100vh;
 		padding: 1px 0 0;
 		margin: 0 auto 0;
-		z-index: 300;
-		transition: opacity 2000ms linear 40ms, top 440ms ease 0;
+		z-index: 99;
+		/*transition: opacity 2000ms linear 40ms, top 440ms ease 0;*/
+		transition: all 1240ms ease 0;
 	}
 	header.onload {
 		top: 0;
@@ -183,11 +205,11 @@
 	</script>
 </head>
 <body onload="showHeader()">
-	<div class="shadow"></div>
 	<div id="bg">
 		<div id="bg-up" class="lazer"></div>
 		<div id="bg-down" class="lazer"></div>
 	</div>
+	<div class="shadow"></div>
 	<header id="grand-header">
 		<div id="title">
 			<div id="title-in">
