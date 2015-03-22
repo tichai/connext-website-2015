@@ -7,6 +7,23 @@
 	<link rel="shortcut icon" href="/favicon.png">
 	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 	<style type="text/css">
+	@-webkit-keyframes dim-and-glow {
+		0% {
+			opacity: 1;
+		}
+		25% {
+			opacity: 0.93;
+		}
+		50% {
+			opacity: 0.77;
+		}
+		75% {
+			opacity: 0.93;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
 	@import url(/fonts/source-sans-pro.css);
 	* {
 		text-rendering: optimizeLegibility;
@@ -48,33 +65,43 @@
 		transition: all 30ms ease;
 
 		position: fixed;
-		top: -196vh;
+		top: -190vh;
 		left: 50vw;
-		width: 30px;
-		height: 520vh;
+		width: 40px;
+		height: 450vh;
 		margin-top: 0vh;
-		margin-left: -15px;
+		margin-left: -20px;
 		z-index: 3;
 		-webkit-filter: blur(19px);
 		-moz-filter: blur(19px);
 		-ms-filter: blur(19px);
 		-o-filter: blur(19px);
+		-webkit-filter: blur(19px);
+		-moz-filter: blur(19px);
 		filter: blur(19px);
+		-webkit-transform-style: flat;
+		-moz-transform-style: flat;
 		transform-style: flat;
 	}
 	#bg #bg-up {
-		-webkit-transform: skewX(-33deg) translateX(-90px) rotateX(72deg);
-		-moz-transform: skewX(-33deg) translateX(-90px) rotateX(72deg);
-		-ms-transform: skewX(-33deg) translateX(-90px) rotateX(72deg);
-		-o-transform: skewX(-33deg) translateX(-90px) rotateX(72deg);
-		transform: skewX(-33deg) translateX(-90px) rotateX(72deg);
+		-webkit-transform: skewX(-33deg) translateX(100px) rotateX(70deg);
+		-moz-transform: skewX(-33deg) translateX(100px) rotateX(70deg);
+		-ms-transform: skewX(-33deg) translateX(100px) rotateX(70deg);
+		-o-transform: skewX(-33deg) translateX(100px) rotateX(70deg);
+		transform: skewX(-33deg) translateX(100px) rotateX(70deg);
+	}
+	#bg #bg-up.onload {
+		-webkit-animation: dim-and-glow 6s linear 0s infinite;
 	}
 	#bg #bg-down {
-		-webkit-transform: skewX(33deg) translateX(90px) rotateX(72deg);
-		-moz-transform: skewX(33deg) translateX(90px) rotateX(72deg);
-		-ms-transform: skewX(33deg) translateX(90px) rotateX(72deg);
-		-o-transform: skewX(33deg) translateX(90px) rotateX(72deg);
-		transform: skewX(33deg) translateX(90px) rotateX(72deg);
+		-webkit-transform: skewX(33deg) translateX(-100px) rotateX(70deg);
+		-moz-transform: skewX(33deg) translateX(-100px) rotateX(70deg);
+		-ms-transform: skewX(33deg) translateX(-100px) rotateX(70deg);
+		-o-transform: skewX(33deg) translateX(-100px) rotateX(70deg);
+		transform: skewX(33deg) translateX(-100px) rotateX(70deg);
+	}
+	#bg #bg-down.onload {
+		-webkit-animation: dim-and-glow 6s linear 2s infinite;
 	}
 	.shadow {
 		position: fixed;
@@ -193,14 +220,18 @@
 	var showHeader = function () {
 		window.setTimeout(function(){
 			document.getElementById('bg-up').style.opacity = '1';
-			window.setTimeout(function(){
-				document.getElementById('bg-down').style.opacity = '1';
-				window.setTimeout(function(){
-					document.getElementById('grand-header').style.opacity = '1';
-					document.getElementById('grand-header').classList.add('onload');
-				}, 400);
-			}, 400);
-		}, 300);
+		}, 70);
+		window.setTimeout(function(){
+			document.getElementById('bg-down').style.opacity = '1';
+		}, 400);
+		window.setTimeout(function(){
+			document.getElementById('grand-header').style.opacity = '1';
+			document.getElementById('grand-header').classList.add('onload');
+		}, 700);
+		window.setTimeout(function(){
+			document.getElementById('bg-up').classList.add('onload');
+			document.getElementById('bg-down').classList.add('onload');
+		}, 1000);
 	};
 	</script>
 </head>
@@ -235,7 +266,7 @@
 	<script type="text/javascript">
 	setTimeout(function(){
 		showHeader();
-	}, 1000)
+	}, 3000)
 	</script>
 </body>
 </html>
