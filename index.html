@@ -32,11 +32,12 @@
 		-webkit-perspective: 500px;
 		-webkit-perspective-origin: center bottom;
 		z-index: -200;
-		opacity: 0;
 	}
 	#bg .lazer {
 		background: #00B7FF;
 		box-shadow: #00B7FF 0 0 3px 6px, #00B7FF 0 0 3px 0, #00B7FF 0 0 3px 0;
+		opacity: 0;
+		transition: all 30ms ease;
 
 		position: fixed;
 		top: -60vh;
@@ -132,7 +133,7 @@
 	}
 	header p {
 		line-height: 1.45em;
-		padding: 90px 0;
+		padding: 65px 0;
 	}
 	section {
 		min-height: 100px;
@@ -162,13 +163,16 @@
 	</style>
 	<script type="text/javascript">
 	var showHeader = function () {
-		setTimeout(function(){
-			document.getElementById('bg').style.opacity = '1';
-			setTimeout(function(){
-				document.getElementById('grand-header').style.opacity = '1';
+		window.setTimeout(function(){
+			document.getElementById('bg-up').style.opacity = '1';
+			window.setTimeout(function(){
+				document.getElementById('bg-down').style.opacity = '1';
+				window.setTimeout(function(){
+					document.getElementById('grand-header').style.opacity = '1';
+				}, 300);
 			}, 300);
 		}, 200);
-	}
+	};
 	</script>
 </head>
 <body onload="showHeader()">
@@ -182,7 +186,7 @@
 			<div id="title-in">
 				<a href="./">
 					<div class="avatar">
-						<img src="/img/logo-and-slogan@3x.svg">
+						<img src="/img/logo-and-slogan@3x.png">
 					</div>
 				</a>
 				<p>Comming Soon...</p>
