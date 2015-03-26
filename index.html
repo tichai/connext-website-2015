@@ -267,14 +267,15 @@
 	</div> -->
 	<script type="text/javascript">
 	(function(ele, ratio){
-		for (var i = 0; i < ele.length; i++) {
-			if (!ele[i].src.match(/@\dx\.\w{3,4}$/)) {
-				ele[i].src = ele[i].src.replace(/\.jpg$/, '@' + ratio + 'x.jpg')
-										.replace(/\.jpeg$/, '@' + ratio + 'x.jpeg')
-										.replace(/\.png$/, '@' + ratio + 'x.png')
-										.replace(/\.gif$/, '@' + ratio + 'x.gif');
-			};
-		};
+		if (ratio != 1) { for (var i = 0; i < ele.length; i++) {
+							if (!ele[i].src.match(/@\dx\.\w{3,4}$/)) {
+								ele[i].src = ele[i].src.replace(/\.jpg$/, '@' + ratio + 'x.jpg')
+														.replace(/\.jpeg$/, '@' + ratio + 'x.jpeg')
+														.replace(/\.png$/, '@' + ratio + 'x.png')
+														.replace(/\.gif$/, '@' + ratio + 'x.gif');
+							};
+						};
+		}
 	})(document.querySelectorAll('img[retina]'), window.devicePixelRatio);
 	setTimeout(function(){
 		showHeader();
