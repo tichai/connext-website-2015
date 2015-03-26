@@ -58,7 +58,7 @@
 		-o-perspective-origin: center bottom;
 		perspective-origin: center bottom;
 	}
-	#bg .lazer {
+	#bg .bg-lazer {
 		background: #00B7FF;
 		box-shadow: #00B7FF 0 0 3px 6px, #00B7FF 0 0 3px 0, #00B7FF 0 0 3px 0;
 		opacity: 0;
@@ -237,8 +237,8 @@
 </head>
 <body onload="showHeader()">
 	<div id="bg">
-		<div id="bg-up" class="lazer"></div>
-		<div id="bg-down" class="lazer"></div>
+		<div id="bg-up" class="bg-lazer"></div>
+		<div id="bg-down" class="bg-lazer"></div>
 	</div>
 	<div class="shadow"></div>
 	<header id="grand-header">
@@ -246,7 +246,9 @@
 			<div id="title-in">
 				<a href="./">
 					<div class="avatar">
-						<img src="/img/logo-and-slogan@3x.png">
+						<img
+							retina
+							src="/img/logo-and-slogan.png">
 					</div>
 				</a>
 				<p>Coming Soon...</p>
@@ -264,6 +266,16 @@
 		</footer>
 	</div> -->
 	<script type="text/javascript">
+	(function(ele, ratio){
+		for (var i = 0; i < ele.length; i++) {
+			if (!ele[i].src.match(/@\dx\.\w{3,4}$/)) {
+				ele[i].src = ele[i].src.replace(/\.jpg$/, '@' + ratio + 'x.jpg')
+										.replace(/\.jpeg$/, '@' + ratio + 'x.jpeg')
+										.replace(/\.png$/, '@' + ratio + 'x.png')
+										.replace(/\.gif$/, '@' + ratio + 'x.gif');
+			};
+		};
+	})(document.querySelectorAll('img[retina]'), window.devicePixelRatio);
 	setTimeout(function(){
 		showHeader();
 	}, 3000)
