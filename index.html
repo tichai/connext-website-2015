@@ -12,26 +12,57 @@
 			opacity: 1;
 		}
 		25% {
-			opacity: 0.93;
+			opacity: 0.94;
 		}
 		50% {
-			opacity: 0.77;
+			opacity: 0.83;
 		}
 		75% {
-			opacity: 0.93;
+			opacity: 0.94;
 		}
 		100% {
 			opacity: 1;
 		}
 	}
-	@import url(/fonts/source-sans-pro.css);
+	@import url(/fonts/font-awesome.css);
 	* {
 		text-rendering: optimizeLegibility;
 		box-sizing: border-box;
-		transition: all 500ms ease;
+		transition: all 400ms ease;
 	}
+
+	.keep-horizontal-distance {
+		margin-left: 40px;
+		margin-right: 40px;
+	}
+
+	.pull-center {
+		text-align: center;
+	}
+
+	.ghost_btn {
+		font-size: 16px;
+		color: #FFF;
+		text-align: center;
+		text-decoration: none;
+		background: none;
+		border: 1px solid #FFF;
+		border-radius: 800px;
+		display: inline-block;
+		width: 100px;
+		height: 100px;
+		padding: 37px 0 0;
+		transition: all 300ms ease;
+	}
+	.ghost_btn:hover {
+		color: #000;
+		background: #FFF;
+	}
+
+	/* --------------------------------------- */
+
 	body {
-		font-family: 'Source Sans Pro', 'Avenir Nexr', Avenir, 'Helvetica Neue', Helvetica, Lucida Grande, Arial, 'Arial-Black', 'Arial Black', Arial Black, sans-serif;
+		font-family: Seravek, 'Myriad Pro', 'Myriad Set Pro', 'Myriad Set', Myriad, 'Avenir Nexr', Avenir, 'Helvetica Neue', Helvetica, Lucida Grande, Arial, 'Arial-Black', 'Arial Black', Arial Black, sans-serif;
 		font-size: 20px;
 		font-weight: 400;
 		color: #FFF;
@@ -105,7 +136,7 @@
 	}
 	.shadow {
 		position: fixed;
-		background: linear-gradient(rgba(0, 0, 0, 0.92) 9%, rgba(0, 0, 0, 0) 85%);
+		background: linear-gradient(rgba(0, 0, 0, 0.90) 9%, rgba(0, 0, 0, 0) 80%);
 		top: 0;
 		left: 0;
 		width: 100%;
@@ -113,7 +144,12 @@
 		z-index: 33;
 		transform-style: flat;
 	}
-	header a:link, header a:visited, header a:hover, header a:active, footer a {
+	.overall {
+		background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.94));
+		position: relative;
+		z-index: 555;
+	}
+	header a:link, header a:visited, header a:hover, header a:active {
 		display: block;
 		color: inherit;
 		text-decoration: inherit;
@@ -121,16 +157,12 @@
 	header {
 		opacity: 0;
 		position: relative;
-		top: -18px;
 		height: 100vh;
 		padding: 1px 0 0;
 		margin: 0 auto 0;
 		z-index: 99;
 		/*transition: opacity 2000ms linear 40ms, top 440ms ease 0;*/
 		transition: all 1240ms ease 0;
-	}
-	header.onload {
-		top: 0;
 	}
 	header #title {
 		margin: 56vh 0 0;
@@ -156,10 +188,11 @@
 		}
 	}
 	#main {
-		position: absolute;
-		top: 90%;
+		position: relative;
 		width: 100%;
 		padding: 0;
+		margin: 0 0;
+		z-index: 666;
 	}
 	.content {
 		padding: 60px 0 30px;
@@ -170,10 +203,17 @@
 		.content {
 			width: 96%;
 		}
+		.constrained-width {
+			width: 100%;
+		}
 	}
 	@media screen and (min-width: 768px) {
 		.content {
 			width: 900px;
+		}
+		.constrained-width {
+			width: 640px;
+			margin: 0 auto;
 		}
 	}
 	header h1, header p {
@@ -191,29 +231,33 @@
 		padding: 65px 0;
 	}
 	section {
-		min-height: 100px;
-		width: 540px;
+		min-height: 50vh;
+		width: 900px;
 		padding: 30px 0;
 		margin: 0 auto 70px;
 		background-size: 100px;
-		overflow: hidden;
+		/*overflow: hidden;*/
 	}
 	section h2 {
-		font-size: 30px;
+		font-size: 42px;
 		font-weight: 400;
 		line-height: 42px;
 		color: #FFF;
-		letter-spacing: 2px;
 		text-align: center;
 		text-transform: uppercase;
 		padding: 8px 0 0;
-		margin: 0 0 12px 0;
+		margin: 0 0 100px 0;
 	}
 	footer {
-		font-size: 14px;
-		line-height: 22px;
+		font-size: 15px;
+		font-weight: 400;
+		line-height: 16px;
 		text-align: center;
 		padding: 50px 0;
+	}
+	footer a {
+		color: inherit;
+		text-decoration: none;
 	}
 	</style>
 	<script type="text/javascript">
@@ -241,30 +285,41 @@
 		<div id="bg-down" class="bg-lazer"></div>
 	</div>
 	<div class="shadow"></div>
-	<header id="grand-header">
-		<div id="title">
-			<div id="title-in">
-				<a href="./">
-					<div class="avatar">
-						<img
-							retina
-							src="/img/logo-and-slogan.png">
-					</div>
-				</a>
-				<p>Coming Soon...</p>
+
+	<div class="overall">
+		<header id="grand-header">
+			<div id="title">
+				<div id="title-in">
+					<a href="./">
+						<div class="avatar">
+							<img
+								retina
+								src="/img/logo-and-slogan.png">
+						</div>
+					</a>
+					<!-- <p>Coming Soon...</p> -->
+				</div>
 			</div>
+		</header>
+		<div id="main">
+			<div class="content">
+				<section>
+					<div class="section-in">
+						<h2>Contact</h2>
+						<div class="constrained-width pull-center">
+							<a class="ghost_btn keep-horizontal-distance" href="mailto:tf@connext.im">演讲报名</a>
+							<a class="ghost_btn keep-horizontal-distance" href="mailto:tf@connext.im">赞助合作</a>
+							<a class="ghost_btn keep-horizontal-distance" href="mailto:tf@connext.im">投资事宜</a>
+						</div>
+					</div>
+				</section>
+			</div>
+			<footer>
+				<a href="/">&copy; Copyright <script type="text/javascript">document.write((new Date()).getFullYear());</script> All Rights Reserved by Connext.</a> <a href="http://www.joyneop.com/">Designed by Joy Neop.</a>
+			</footer>
 		</div>
-	</header>
-	<!-- <div id="main">
-		<div class="content">
-			<section>
-				<h2>Example Title</h2>
-			</section>
-		</div>
-		<footer>
-			<a href="/">&copy; Copyright <script type="text/javascript">document.write((new Date()).getFullYear());</script> All Rights Reserved by Connext</a>
-		</footer>
-	</div> -->
+	</div>
+
 	<script type="text/javascript">
 	(function(ele, ratio){
 		if (ratio != 1) { for (var i = 0; i < ele.length; i++) {
