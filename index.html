@@ -292,9 +292,7 @@
 				<div id="title-in">
 					<a href="./">
 						<div class="avatar">
-							<img
-								retina
-								src="/img/logo-and-slogan.png">
+							<img retina src="/img/logo-and-slogan.png">
 						</div>
 					</a>
 					<!-- <p>Coming Soon...</p> -->
@@ -307,7 +305,7 @@
 					<div class="section-in">
 						<h2>Contact</h2>
 						<div class="constrained-width pull-center">
-							<a class="ghost_btn keep-horizontal-distance" href="mailto:tianyuf@connext.im">演讲报名</a>
+							<a class="ghost_btn keep-horizontal-distance" href="/signup/">演讲报名</a>
 							<a class="ghost_btn keep-horizontal-distance" href="mailto:tianyuf@connext.im">赞助合作</a>
 							<a class="ghost_btn keep-horizontal-distance" href="mailto:tianyuf@connext.im">校园宣传</a>
 						</div>
@@ -322,20 +320,18 @@
 
 	<script type="text/javascript">
 	(function(ele, ratio){
-		if (ratio != 1) { for (var i = 0; i < ele.length; i++) {
-							if (!ele[i].src.match(/@\dx\.\w{3,4}$/)) {
-								ele[i].src = ele[i].src.replace(/\.jpg$/, '@' + ratio + 'x.jpg')
-														.replace(/\.jpeg$/, '@' + ratio + 'x.jpeg')
-														.replace(/\.png$/, '@' + ratio + 'x.png')
-														.replace(/\.gif$/, '@' + ratio + 'x.gif');
-							};
-						};
+		if (ratio != 1) {
+			for (var i = 0; i < ele.length; i++) {
+				if ( !ele[i].src.match(/@\dx\.\w{3,4}$/) ) {
+					ele[i].src = ele[i].src.replace(/\.(png|jpg|jpeg|gif)$/, '@' + ratio + 'x.$1');
+				};
+			};
 		}
 	})(document.querySelectorAll('img[retina]'), window.devicePixelRatio);
 
 	setTimeout(function(){
 		showHeader();
-	}, 3000)
+	}, 3000);
 	</script>
 </body>
 </html>
