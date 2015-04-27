@@ -6,6 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="/favicon.png">
 	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
 	<style type="text/css">
 	@-webkit-keyframes dim-and-glow {
 		0% {
@@ -40,6 +42,11 @@
 		text-align: center;
 	}
 
+	.jn-button-group-wrap {
+		margin: 1.1em 0;
+		padding: 0.3em 0;
+	}
+
 	.ghost_btn {
 		font-size: 16px;
 		color: #FFF;
@@ -62,9 +69,9 @@
 	/* --------------------------------------- */
 
 	body {
-		font-family: Seravek, 'Myriad Pro', 'Myriad Set Pro', 'Myriad Set', Myriad, 'Avenir Nexr', Avenir, 'Helvetica Neue', Helvetica, Lucida Grande, Arial, 'Arial-Black', 'Arial Black', Arial Black, sans-serif;
+		font-family: Libertad, Seravek, 'Myriad Pro', 'Myriad Set Pro', 'Myriad Set', Myriad, 'Avenir Nexr', Avenir, 'Helvetica Neue', Helvetica, 'Lucida Grande', Arial, 'Arial-Black', 'Arial Black', sans-serif;
 		font-size: 20px;
-		font-weight: 400;
+		font-weight: 200;
 		color: #FFF;
 		min-height: 100vh;
 		padding: 0;
@@ -201,18 +208,14 @@
 	}
 	@media screen and (max-width: 768px) {
 		.content {
-			width: 96%;
 		}
 		.constrained-width {
-			width: 100%;
 		}
 	}
 	@media screen and (min-width: 768px) {
 		.content {
-			width: 900px;
 		}
 		.constrained-width {
-			width: 640px;
 			margin: 0 auto;
 		}
 	}
@@ -232,7 +235,6 @@
 	}
 	section {
 		min-height: 50vh;
-		width: 900px;
 		padding: 30px 0;
 		margin: 0 auto 70px;
 		background-size: 100px;
@@ -246,7 +248,16 @@
 		text-align: center;
 		text-transform: uppercase;
 		padding: 8px 0 0;
-		margin: 0 0 100px 0;
+		margin: 0 0 24px 0;
+	}
+	section p {
+		font-size: 20px;
+		font-weight: 300;
+		letter-spacing: 0.01rem;
+		line-height: 1.66em;
+		margin: 1.2em 0;
+		/*text-align: justify;*/
+		hyphens: auto;
 	}
 	footer {
 		font-size: 15px;
@@ -302,12 +313,26 @@
 		<div id="main">
 			<div class="content">
 				<section>
-					<div class="section-in">
-						<h2>Contact</h2>
-						<div class="constrained-width pull-center">
-							<a class="ghost_btn keep-horizontal-distance" href="/speech/submit.html">演讲报名</a>
-							<a class="ghost_btn keep-horizontal-distance" href="mailto:tianyuf@connext.im">赞助合作</a>
-							<a class="ghost_btn keep-horizontal-distance" href="mailto:tianyuf@connext.im">校园宣传</a>
+					<div class="section-in container">
+						<div class="row">
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								<h2>Contact</h2>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at libero elementum, molestie massa at, commodo ipsum. Proin non  dapibus maximus sed eget velit. Etiam varius,  tempor placerat, orci est ornare sem, a varius tellus lorem vel libero. Curabitur purus dui, porta sed hendrerit nec, sollicitudin faucibus felis. Pellentesque mauris vitae porta ante. Nam finibus vehicula gravida. Nam suscipit, risus non egestas placerat, orci ex condimentum sapien, ut molestie velit ex at lectus.
+								</p>
+								<p>
+									Nunc orci sapien, ornare non ante non, euismod rhoncus leo. Etiam efficitur ex non tempus fringilla. In ultricies, erat quis auctor volutpat, lectus augue lobortis magna, quis pulvinar ante ex quis nibh. Mauris pharetra non odio at conssus et. Sed eu ligula enim. Cras ac porta tortor. Quisque ut sapien vitae erat suscipit consectetur. Pellentesque volutpat egestas urna, ut pulvinar lacus gravida quis.
+								</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="jn-button-group-wrap text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+								<a class="ghost_btn keep-horizontal-distance" href="/speech/submit.html">演讲报名</a>
+							</div>
 						</div>
 					</div>
 				</section>
