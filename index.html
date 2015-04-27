@@ -259,6 +259,38 @@
 		/*text-align: justify;*/
 		hyphens: auto;
 	}
+	.blockquote-container {
+		font-size: 18px;
+		background: rgba(0, 0, 0, 0.455);
+		border: 1px solid #444;
+		border-radius: 3px;
+		min-height: 132px;
+		padding: 16px;
+		margin: 1.2em 0;
+	}
+	.blockquote-container img.quote-avatar {
+		border-radius: 8888px;
+		float: right;
+		width: 100px;
+		height: 100px;
+		margin-left: 50px;
+	}
+	.blockquote-container blockquote {
+		font-size: inherit;
+		border: none;
+		padding: 0;
+		margin: 0;
+	}
+	.blockquote-container cite a {
+		color: #FFF;
+		text-decoration: none;
+	}
+	.blockquote-container cite a:hover {
+		color: #FFF;
+		text-decoration: none;
+		border-bottom: 1px solid #666;
+		transition: none;
+	}
 	footer {
 		font-size: 15px;
 		font-weight: 400;
@@ -321,6 +353,13 @@
 						</div>
 						<div class="row">
 							<div class="col-xs-12 col-sm-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+								<div class="blockquote-container">
+									<img class="quote-avatar" src="http://www.gravatar.com/avatar/7129addff7c8c75cf2c4a0073704b505?s=1000&d=mm&r=x">
+									<blockquote>
+										你们有一个好，很熟悉西方的那一套理论。哪里要办活动，比尹子立跑得还快。中国有句古话，闷声发大财，我一句话都不说。这才是坠吼的。晓唔晓得呀？<br />
+										<cite>— <a href="//linghein.me/">Lingehin</a></cite>
+									</blockquote>
+								</div>
 								<p>
 									Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at libero elementum, molestie massa at, commodo ipsum. Proin non  dapibus maximus sed eget velit. Etiam varius,  tempor placerat, orci est ornare sem, a varius tellus lorem vel libero. Curabitur purus dui, porta sed hendrerit nec, sollicitudin faucibus felis. Pellentesque mauris vitae porta ante. Nam finibus vehicula gravida. Nam suscipit, risus non egestas placerat, orci ex condimentum sapien, ut molestie velit ex at lectus.
 								</p>
