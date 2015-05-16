@@ -1,3 +1,13 @@
+<!--
+   _____                            _     ___   ___  __ _____ 
+  / ____|                          | |   |__ \ / _ \/_ | ____|
+ | |     ___  _ __  _ __   _____  _| |_     ) | | | || | |__  
+ | |    / _ \| '_ \| '_ \ / _ \ \/ / __|   / /| | | || |___ \ 
+ | |___| (_) | | | | | | |  __/>  <| |_   / /_| |_| || |___) |
+  \_____\___/|_| |_|_| |_|\___/_/\_\\__| |____|\___/ |_|____/ 
+
+-->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,6 +21,18 @@
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<!--scroll-->
+	<script type="text/javascript" src="./js/move-top.js"></script>
+	<script type="text/javascript" src="./js/easing.js"></script>
+		<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+			});
+		});
+		</script>
+
 	<style type="text/css">
 	@-webkit-keyframes dim-and-glow {
 		0% {
@@ -352,7 +374,7 @@
 		<header id="grand-header">
 			<div id="title">
 				<div id="title-in">
-					<a href="./">
+					<a href="#main" class="scroll">
 						<div class="avatar">
 							<img retina src="/img/logo-and-slogan.png">
 						</div>
@@ -391,6 +413,15 @@
 						<div class="row">
 							<div class="jn-button-group-wrap text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
 								<a class="ghost_btn keep-horizontal-distance" href="/speech/submit.html">演讲报名</a>
+								<a class="ghost_btn keep-horizontal-distance" href="http://www.huodongxing.com/go/connext" target="_blank">订购门票</a>
+								<a class="ghost_btn keep-horizontal-distance" href="mailto:2015@connext.im">媒体合作</a>
+							</div>
+						</div>
+						<!--房天语你不是人你改需求你又不找JN让我写 一百块都不给我 房天语你不是人你还我血汗钱！-->
+						<div class="row">
+						<!-- 大金主 -->
+							<div>
+								<img src="/img/ms_w.png">
 							</div>
 						</div>
 						<div class="row">
